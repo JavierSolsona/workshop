@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Router, Route, Switch } from 'react-router';
+import { ThemeProvider } from '@material-ui/styles';
+import './styles/index.css';
 import * as serviceWorker from './serviceWorker';
+import  history from './history';
+import theme from './styles/theme.js';
+import { HOME } from './constants/routes';
+import Home from './components/Home';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ThemeProvider theme={theme}>
+    <Router history={history}>
+      <React.Fragment>
+        <Switch>
+          <Route exact path={HOME} component={Home}/>
+        </Switch>
+      </React.Fragment>
+    </Router>
+  </ThemeProvider>,
   document.getElementById('root')
 );
 
