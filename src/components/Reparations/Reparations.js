@@ -10,66 +10,55 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import { CLIENTS } from '../../constants/url';
-import { CARS } from '../../constants/routes';
+import { REPARATIONS } from '../../constants/url';
 import axios from "axios";
-import Button from '@material-ui/core/Button';
-import DirectionsCarIcon from '@material-ui/icons/DirectionsCar';
 
-class Clients extends React.Component {
+class Reparations extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clients: []
+      reparations: []
     };  
   };
   
   componentDidMount(){
-    axios.get(CLIENTS)
+    axios.get(REPARATIONS + "/" + this.props.match.params.idCar)
     .then( response => {
-        this.setState({ clients: response.data  });
+        this.setState({ reparations: response.data  });
     }).catch( err => {
       console.log(err);
     })
   }
   
-  gotoCars(id){
-    this.props.history.push(CARS.replace(':idClient', id));
-  }
-  
   render() {
     const { classes } = this.props;
-    const { clients } = this.state;
+    const { reparations } = this.state;
     return (
       <Grid container alignContent="center">
         <Typography variant="h5" gutterBottom>
-          Clients list
+          Reparations list
         </Typography>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
               <TableRow>
                 <TableCell>ID</TableCell>
-                <TableCell>Name</TableCell>
-                <TableCell>RUT</TableCell>
-                <TableCell>Email</TableCell>
-                <TableCell>Actions</TableCell>
+                <TableCell>Date</TableCell>
+                <TableCell>Car Plate</TableCell>
+                <TableCell>Description</TableCell>
+                <TableCell>Price</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {clients.map((client) => (
-                <TableRow key={client.id}>
+              {reparations.map((reparation) => (
+                <TableRow key={reparation.id}>
                   <TableCell component="th" scope="row">
-                    {client.id}
+                    {reparation.id}
                   </TableCell>
-                  <TableCell>{client.name}</TableCell>
-                  <TableCell>{client.rut}</TableCell>
-                  <TableCell>{client.email}</TableCell>
-                  <TableCell>
-                    <Button onClick={() => this.gotoCars(client.id)}>
-                      <DirectionsCarIcon/>
-                    </Button>
-                  </TableCell>
+                  <TableCell>{reparation.date}</TableCell>
+                  <TableCell>{reparation.Car.plate}</TableCell>
+                  <TableCell>{reparation.description}</TableCell>
+                  <TableCell>{reparation.price}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -80,4 +69,4 @@ class Clients extends React.Component {
   }
 }
 
-export default withStyles(styles)(Clients);
+export default withStyles(styles)(Reparations);

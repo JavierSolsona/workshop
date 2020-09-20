@@ -22,7 +22,7 @@ class Home extends React.Component {
         <Grid item xs={12} sm={6}>
           <Button variant="contained" color="primary" onClick={this.goToClients}>
             Clients
-        </Button>
+          </Button>
         </Grid>
         <Grid item xs={12} sm={6}>
           <Button variant="contained" color="primary" onClick={this.goToReparations}>
