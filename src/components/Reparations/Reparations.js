@@ -12,6 +12,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { REPARATIONS } from '../../constants/url';
 import axios from "axios";
+import Button from '@material-ui/core/Button';
 
 class Reparations extends React.Component {
   constructor(props) {
@@ -30,14 +31,23 @@ class Reparations extends React.Component {
     })
   }
   
+  goBack = () => {
+    this.props.history.goBack();
+  }
+  
   render() {
     const { classes } = this.props;
     const { reparations } = this.state;
     return (
       <Grid container>
-        <Typography variant="h5" gutterBottom>
-          Reparations list
-        </Typography>
+        <Grid item xs={12} sm={12} className={classes.item} justify="space-between">
+          <Typography variant="h5">
+            Reparations list
+          </Typography>
+            <Button variant="contained" color="primary" onClick={this.goBack}>
+              Go Back
+            </Button>
+        </Grid>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead>

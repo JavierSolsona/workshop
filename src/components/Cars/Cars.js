@@ -33,6 +33,10 @@ class Cars extends React.Component {
     })
   }
   
+  goBack = () => {
+    this.props.history.goBack();
+  }
+  
   gotoReparations(id){
     this.props.history.push(REPARATIONS.replace(':idCar', id));
   }
@@ -42,9 +46,14 @@ class Cars extends React.Component {
     const { cars } = this.state;
     return (
       <Grid container>
-        <Typography variant="h5" gutterBottom>
-          Cars list
-        </Typography>
+        <Grid item xs={12} sm={12} className={classes.item} justify="space-between">
+          <Typography variant="h5">
+            Car list
+          </Typography>
+            <Button variant="contained" color="primary" onClick={this.goBack}>
+              Go Back
+            </Button>
+        </Grid>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
