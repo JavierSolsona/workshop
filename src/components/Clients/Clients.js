@@ -11,7 +11,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { CLIENTS } from '../../constants/url';
-import { CARS } from '../../constants/routes';
+import { CARS, CLIENTS_CREATE } from '../../constants/routes';
 import axios from "axios";
 import Button from '@material-ui/core/Button';
 import DirectionsCarIcon from '@material-ui/icons/DirectionsCar';
@@ -37,8 +37,12 @@ class Clients extends React.Component {
     this.props.history.goBack();
   }
   
-  gotoCars(id){
+  gotoCars = (id) => {
     this.props.history.push(CARS.replace(':idClient', id));
+  }
+  
+  goToAdd = () => {
+    this.props.history.push(CLIENTS_CREATE);
   }
   
   render() {
@@ -50,9 +54,14 @@ class Clients extends React.Component {
           <Typography variant="h5">
             Client list
           </Typography>
-          <Button variant="contained" color="primary" onClick={this.goBack}>
-            Go Back
-          </Button>
+          <div>
+            <Button variant="contained" color="primary" onClick={this.goToAdd}>
+              Add
+            </Button>
+            <Button variant="contained" color="primary" onClick={this.goBack}>
+              Go Back
+            </Button>
+          </div>
         </Grid>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
