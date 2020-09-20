@@ -1,29 +1,16 @@
-# README #
+# Workshop
+This is a project for my Symmetrics Lab interview, this are the steps to run this project.
 
-This README would normally document whatever steps are necessary to get your application up and running.
+## Perparate the enviorment
 
-### What is this repository for? ###
+Install **npm** version 6.11.3
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Run the command **npm install** for install the dependencies
 
-### How do I get set up? ###
+## Run the project
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Use the command **npm start**
 
-### Contribution guidelines ###
+##View the project
 
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+Open a web browser in http://localhost:8081/ the port can be changed in the package.json file 
