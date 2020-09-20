@@ -12,7 +12,6 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { GET_ALL_REPARATIONS } from '../../constants/url';
 import axios from "axios";
-import { HOME } from '../../constants/routes';
 import Button from '@material-ui/core/Button';
 
 class ReparationsListByDate extends React.Component {
@@ -23,8 +22,8 @@ class ReparationsListByDate extends React.Component {
     };  
   };
   
-  goToHome = () => {
-    this.props.history.push(HOME);
+  goBack = () => {
+    this.props.history.goBack();
   }
   
   componentDidMount(){
@@ -45,7 +44,7 @@ class ReparationsListByDate extends React.Component {
           <Typography variant="h5">
             Reparations list order by date
           </Typography>
-            <Button variant="contained" color="primary" onClick={this.goToHome}>
+            <Button variant="contained" color="primary" onClick={this.goBack}>
               Go Back
             </Button>
         </Grid>

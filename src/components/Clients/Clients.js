@@ -11,7 +11,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { CLIENTS } from '../../constants/url';
-import { CARS, HOME } from '../../constants/routes';
+import { CARS } from '../../constants/routes';
 import axios from "axios";
 import Button from '@material-ui/core/Button';
 import DirectionsCarIcon from '@material-ui/icons/DirectionsCar';
@@ -33,8 +33,8 @@ class Clients extends React.Component {
     })
   }
   
-  goToHome = () => {
-    this.props.history.push(HOME);
+  goBack = () => {
+    this.props.history.goBack();
   }
   
   gotoCars(id){
@@ -50,7 +50,7 @@ class Clients extends React.Component {
           <Typography variant="h5">
             Client list
           </Typography>
-            <Button variant="contained" color="primary" onClick={this.goToHome}>
+            <Button variant="contained" color="primary" onClick={this.goBack}>
               Go Back
             </Button>
         </Grid>
