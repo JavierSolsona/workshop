@@ -18,14 +18,14 @@ class Home extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <Grid container className={classes.container}>
-        <Grid item xs={12} sm={6}>
-          <Button variant="contained" color="primary" onClick={this.goToClients}>
+      <Grid container alignItems="center" className={classes.container}>
+        <Grid item xs={12} sm={6} className={classes.item} justify="flex-end">
+          <Button variant="contained" color="primary" className={classes.button} onClick={this.goToClients}>
             Clients
           </Button>
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <Button variant="contained" color="primary" onClick={this.goToReparations}>
+         <Grid item xs={12} sm={6} className={classes.item} justify="flex-start">
+          <Button variant="contained" color="primary" className={classes.button} onClick={this.goToReparations}>
             Reparations
           </Button>
         </Grid>
