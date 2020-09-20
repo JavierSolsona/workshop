@@ -44,9 +44,9 @@ class Reparations extends React.Component {
           <Typography variant="h5">
             Reparations list
           </Typography>
-            <Button variant="contained" color="primary" onClick={this.goBack}>
-              Go Back
-            </Button>
+          <Button variant="contained" color="primary" onClick={this.goBack}>
+            Go Back
+          </Button>
         </Grid>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
