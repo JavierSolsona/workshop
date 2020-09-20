@@ -12,6 +12,8 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { GET_ALL_REPARATIONS } from '../../constants/url';
 import axios from "axios";
+import { HOME } from '../../constants/routes';
+import Button from '@material-ui/core/Button';
 
 class ReparationsListByDate extends React.Component {
   constructor(props) {
@@ -20,6 +22,10 @@ class ReparationsListByDate extends React.Component {
       repataions: []
     };  
   };
+  
+  goToHome = () => {
+    this.props.history.push(HOME);
+  }
   
   componentDidMount(){
     axios.get(GET_ALL_REPARATIONS)
@@ -34,10 +40,15 @@ class ReparationsListByDate extends React.Component {
     const { classes } = this.props;
     const { repataions } = this.state;
     return (
-      <Grid container alignContent="center">
-        <Typography variant="h5" gutterBottom>
-          Reparations list order by date
-        </Typography>
+      <Grid container>
+        <Grid item xs={12} sm={12} className={classes.item} justify="space-between">
+          <Typography variant="h5">
+            Reparations list order by date
+          </Typography>
+            <Button variant="contained" color="primary" onClick={this.goToHome}>
+              Go Back
+            </Button>
+        </Grid>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead>

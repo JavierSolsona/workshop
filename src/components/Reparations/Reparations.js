@@ -34,7 +34,7 @@ class Reparations extends React.Component {
     const { classes } = this.props;
     const { reparations } = this.state;
     return (
-      <Grid container alignContent="center">
+      <Grid container>
         <Typography variant="h5" gutterBottom>
           Reparations list
         </Typography>

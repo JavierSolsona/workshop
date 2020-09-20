@@ -41,7 +41,7 @@ class Clients extends React.Component {
     const { classes } = this.props;
     const { clients } = this.state;
     return (
-      <Grid container alignContent="center">
+      <Grid container>
         <Typography variant="h5" gutterBottom>
           Clients list
         </Typography>

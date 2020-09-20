@@ -41,7 +41,7 @@ class Cars extends React.Component {
     const { classes } = this.props;
     const { cars } = this.state;
     return (
-      <Grid container alignContent="center">
+      <Grid container>
         <Typography variant="h5" gutterBottom>
           Cars list
         </Typography>
