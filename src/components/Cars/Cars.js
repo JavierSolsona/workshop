@@ -11,7 +11,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { CARS } from '../../constants/url';
-import { REPARATIONS } from '../../constants/routes';
+import { REPARATIONS, CARS_CREATE } from '../../constants/routes';
 import axios from "axios";
 import Button from '@material-ui/core/Button';
 import BuildIcon from '@material-ui/icons/Build';
@@ -37,8 +37,12 @@ class Cars extends React.Component {
     this.props.history.goBack();
   }
   
-  gotoReparations(id){
+  gotoReparations = (id) => {
     this.props.history.push(REPARATIONS.replace(':idCar', id));
+  }
+  
+  gotoAdd = () => {
+    this.props.history.push(CARS_CREATE.replace(':idClient', this.props.match.params.idClient));
   }
   
   render() {
@@ -56,7 +60,10 @@ class Cars extends React.Component {
           </Grid>
           <Grid item xs={6} sm={6}>
             <Grid container justify="flex-end">
-              <Button variant="contained" color="primary" onClick={this.goBack}>
+              <Button variant="contained" color="primary" onClick={this.gotoAdd}>
+                Add
+              </Button>
+              <Button variant="contained" color="primary" className={classes.marginButton} onClick={this.goBack}>
                 Go Back
               </Button>
             </Grid>

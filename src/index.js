@@ -12,13 +12,15 @@ import {
   REPARATIONS_LIST,
   CARS,
   REPARATIONS,
-  CLIENTS_CREATE } from './constants/routes';
+  CLIENTS_CREATE,
+  CARS_CREATE } from './constants/routes';
 import Home from './components/Home';
 import Clients from './components/Clients/Clients';
 import ReparationsListByDate from './components/Reparations/ReparationsListByDate';
 import Cars from './components/Cars/Cars';
 import Reparations from './components/Reparations/Reparations';
 import ClientsCreate from './components/Clients/Create';
+import CarsCreate from './components/Cars/Create';
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
@@ -30,6 +32,7 @@ ReactDOM.render(
           <Route exact path={CLIENTS_CREATE} component={ClientsCreate}/>
           <Route exact path={REPARATIONS_LIST} component={ReparationsListByDate}/>
           <Route exact path={CARS} component={Cars}/>
+          <Route exact path={CARS_CREATE} component={CarsCreate}/>
           <Route exact path={REPARATIONS} component={Reparations}/>
         </Switch>
       </React.Fragment>
