@@ -1,6 +1,5 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import styles from './styles';
 import Grid from '@material-ui/core/Grid';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -10,10 +9,12 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import axios from 'axios';
+
+import styles from './styles';
 import { REPARATIONS } from '../../constants/url';
 import { REPARATIONS_CREATE } from '../../constants/routes';
-import axios from "axios";
-import Button from '@material-ui/core/Button';
 
 class Reparations extends React.Component {
   constructor(props) {

@@ -4,10 +4,11 @@ import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import styles from './styles';
-import { REPARATIONS } from '../../constants/url';
 import axios from 'axios';
 import qs from 'qs';
+
+import styles from './styles';
+import { REPARATIONS } from '../../constants/url';
 
 class Create extends React.Component {
   

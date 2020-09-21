@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Switch } from 'react-router';
 import { ThemeProvider } from '@material-ui/styles';
+
 import './styles/index.css';
 import * as serviceWorker from './serviceWorker';
 import  history from './history';
