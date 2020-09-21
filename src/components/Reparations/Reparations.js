@@ -11,6 +11,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { REPARATIONS } from '../../constants/url';
+import { REPARATIONS_CREATE } from '../../constants/routes';
 import axios from "axios";
 import Button from '@material-ui/core/Button';
 
@@ -35,6 +36,10 @@ class Reparations extends React.Component {
     this.props.history.goBack();
   }
   
+  gotoAdd = () => {
+    this.props.history.push(REPARATIONS_CREATE.replace(':idCar', this.props.match.params.idCar));
+  }
+  
   render() {
     const { classes } = this.props;
     const { reparations } = this.state;
@@ -50,7 +55,10 @@ class Reparations extends React.Component {
           </Grid>
           <Grid item xs={6} sm={6}>
             <Grid container justify="flex-end">
-              <Button variant="contained" color="primary" onClick={this.goBack}>
+              <Button variant="contained" color="primary" onClick={this.gotoAdd}>
+                Add
+              </Button>
+              <Button variant="contained" color="primary" className={classes.marginButton} onClick={this.goBack}>
                 Go Back
               </Button>
             </Grid>
