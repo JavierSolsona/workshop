@@ -21,7 +21,7 @@ class Clients extends React.Component {
     super(props);
     this.state = {
       clients: []
-    };  
+    };
   };
   
   componentDidMount(){
@@ -41,7 +41,7 @@ class Clients extends React.Component {
     this.props.history.push(CARS.replace(':idClient', id));
   }
   
-  goToAdd = () => {
+  gotoAdd = () => {
     this.props.history.push(CLIENTS_CREATE);
   }
   
@@ -50,18 +50,24 @@ class Clients extends React.Component {
     const { clients } = this.state;
     return (
       <Grid container>
-        <Grid item xs={12} sm={12} className={classes.item} justify="space-between">
-          <Typography variant="h5">
-            Client list
-          </Typography>
-          <div>
-            <Button variant="contained" color="primary" onClick={this.goToAdd}>
-              Add
-            </Button>
-            <Button variant="contained" color="primary" onClick={this.goBack}>
-              Go Back
-            </Button>
-          </div>
+        <Grid container className={classes.item}>
+          <Grid item xs={6} sm={6}>
+            <Grid container justify="flex-start">
+              <Typography variant="h5">
+                Client list
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item xs={6} sm={6}>
+            <Grid container justify="flex-end">
+              <Button variant="contained" color="primary" onClick={this.gotoAdd}>
+                Add
+              </Button>
+              <Button variant="contained" color="primary" onClick={this.goBack}>
+                Go Back
+              </Button>
+            </Grid>
+          </Grid>
         </Grid>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">

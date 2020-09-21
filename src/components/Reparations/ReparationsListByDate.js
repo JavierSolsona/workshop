@@ -40,13 +40,21 @@ class ReparationsListByDate extends React.Component {
     const { repataions } = this.state;
     return (
       <Grid container>
-        <Grid item xs={12} sm={12} className={classes.item} justify="space-between">
-          <Typography variant="h5">
-            Reparations list order by date
-          </Typography>
-          <Button variant="contained" color="primary" onClick={this.goBack}>
-            Go Back
-          </Button>
+        <Grid container className={classes.item}>
+          <Grid item xs={6} sm={6}>
+            <Grid container justify="flex-start">
+              <Typography variant="h5">
+                Reparations list order by date
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item xs={6} sm={6}>
+            <Grid container justify="flex-end">
+              <Button variant="contained" color="primary" onClick={this.goBack}>
+                Go Back
+              </Button>
+            </Grid>
+          </Grid>
         </Grid>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">

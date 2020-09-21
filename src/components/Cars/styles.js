@@ -3,7 +3,6 @@ const styles = theme => ({
     minWidth: 650,
   },
   item: {
-    display: "flex",
     marginBottom: "5%",
     marginTop: "2%",
     marginLeft: "2%",

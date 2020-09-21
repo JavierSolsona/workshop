@@ -3,11 +3,18 @@ const styles = theme => ({
     minWidth: 650,
   },
   item: {
-    display: "flex",
     marginBottom: "5%",
     marginTop: "2%",
     marginLeft: "2%",
     marginRight: "2%",
+  },
+  form: {
+    marginLeft: "5%",
+    marginRight: "5%",
+    marginTop: "5%"
+  },
+  submitContainer:{
+    marginTop: "2%"
   }
 });
 
