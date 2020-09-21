@@ -63,7 +63,7 @@ class Clients extends React.Component {
               <Button variant="contained" color="primary" onClick={this.gotoAdd}>
                 Add
               </Button>
-              <Button variant="contained" color="primary" onClick={this.goBack}>
+              <Button variant="contained" color="primary" className={classes.marginButton} onClick={this.goBack}>
                 Go Back
               </Button>
             </Grid>

@@ -15,6 +15,9 @@ const styles = theme => ({
   },
   submitContainer:{
     marginTop: "2%"
+  },
+  marginButton: {
+    marginLeft: "1%"
   }
 });
 
