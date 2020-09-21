@@ -94,8 +94,8 @@ class Create extends React.Component {
                  onChange={this.handleChange}
                  name="price"
                  value={this.state.price}
-                 validators={['required']}
-                 errorMessages={["This field is required"]}
+                 validators={['required', 'isFloat', 'isPositive']}
+                 errorMessages={["This field is required", "This field must be float", "This field must be positive"]}
                  fullWidth
                  InputLabelProps={{required: true}}
                  variant="outlined"
