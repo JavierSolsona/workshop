@@ -16,14 +16,14 @@ import {
   CLIENTS_CREATE,
   CARS_CREATE,
   REPARATIONS_CREATE} from './constants/routes';
-import Home from './components/Home';
-import Clients from './components/Clients/Clients';
-import ReparationsListByDate from './components/Reparations/ReparationsListByDate';
-import Cars from './components/Cars/Cars';
-import Reparations from './components/Reparations/Reparations';
-import ClientsCreate from './components/Clients/Create';
-import CarsCreate from './components/Cars/Create';
-import ReparationsCreate from './components/Reparations/Create';
+import Home from './components/home';
+import Clients from './components/clients/clients';
+import ReparationsListByDate from './components/reparations/reparations-list-by-date';
+import Cars from './components/cars/cars';
+import Reparations from './components/reparations/reparations';
+import ClientsCreate from './components/clients/create';
+import CarsCreate from './components/cars/create';
+import ReparationsCreate from './components/reparations/create';
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
