@@ -11,6 +11,6 @@ Run the command **npm install** for install the dependencies
 
 Use the command **npm start**
 
-##View the project
+## View the project
 
-Open a web browser in http://localhost:8081/ the port can be changed in the package.json file 
+Open a web browser in **http://localhost:8081/** the port can be changed in the package.json file 
